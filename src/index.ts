@@ -79,4 +79,4 @@ class GasTracker implements Factory {
 	}
 }
 
-export default { GasTracker, BitcoinResult, EthereumResult, PolygonResult, BscResult };
+export { GasTracker, BitcoinResult, EthereumResult, PolygonResult, BscResult };
