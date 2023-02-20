@@ -5,6 +5,10 @@ import EthereumBlockchain from './blockchain/ethereum';
 import PolygonBlockchain from './blockchain/polygon';
 import Blockchain from './contract/blockchain';
 import Factory from './contract/factory';
+import EthereumResult from './result/ethereum';
+import PolygonResult from './result/polygon';
+import BscResult from './result/bsc';
+import BitcoinResult from './result/bitcoin';
 
 class GasTracker implements Factory {
 	private axiosInstance: AxiosInstance;
@@ -14,7 +18,7 @@ class GasTracker implements Factory {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param {string} [apiKey]
 	 * @memberof GasTracker
 	 */
@@ -75,4 +79,4 @@ class GasTracker implements Factory {
 	}
 }
 
-export default GasTracker;
+export default { GasTracker, BitcoinResult, EthereumResult, PolygonResult, BscResult };
