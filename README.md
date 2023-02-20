@@ -6,7 +6,7 @@
 - Bitcoin
 - Ethereum (requires **API TOKEN** from [etherscan.io](https://etherscan.io))
 - Polygon (requires **API TOKEN** from [polygonscan.com](https://polygonscan.com))
-- Binance Smart Chain (requires **API TOKEN** from [bscscan.com](https://bscscan.com))
+- BNB Chain / Binance Smart Chain (requires **API TOKEN** from [bscscan.com](https://bscscan.com))
 
 ---
 
