@@ -13,7 +13,7 @@
 ## Install
 
 ```sh
-npm i gas-tracker
+npm i @samyan/gas-tracker
 ```
 
 ## Usage
