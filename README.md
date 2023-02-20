@@ -1,7 +1,7 @@
 
 # GasTracker
 
-## Library for get gas price from different sources. The currently supported blockchains:
+### Library for get gas price from different sources. The currently supported blockchains:
 
 - Bitcoin
 - Ethereum (requires **API TOKEN** from [etherscan.io](https://etherscan.io))
