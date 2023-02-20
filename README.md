@@ -1,5 +1,5 @@
 
-# GasTracker
+# GasTracker ![Version](https://img.shields.io/npm/v/@samyan/gas-tracker) ![License](https://img.shields.io/npm/l/@samyan/gas-tracker)
 
 ### Library for get gas price from different sources. The currently supported blockchains:
 
