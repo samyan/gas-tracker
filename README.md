@@ -48,6 +48,6 @@ try {
 
     console.log(result.getFastPrice());
 } catch (error) {
-    console.log(reason.message);
+    console.log(error.message);
 }
 ````
