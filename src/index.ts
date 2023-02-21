@@ -32,6 +32,16 @@ class GasTracker implements Factory {
 	}
 
 	/**
+	 * Set api key
+	 *
+	 * @param {string} apiKey
+	 * @memberof GasTracker
+	 */
+	public setApiKey(apiKey: string): void {
+		this.apiKey = apiKey;
+	}
+
+	/**
 	 * Set proxy
 	 *
 	 * @param {string} protocol
