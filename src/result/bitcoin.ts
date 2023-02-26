@@ -7,48 +7,48 @@ interface ResponseProps {
 }
 
 class BitcoinResult extends ResultContract {
-	private result: ResponseProps;
+	private response: ResponseProps;
 
 	/**
 	 * Constructor
-	 *
-	 * @param {*} result
+	 * 
+	 * @param {ResponseProps} response
 	 * @memberof BitcoinResult
 	 */
-	public constructor(result: any) {
+	public constructor(response: ResponseProps) {
 		super();
 		
-		this.result = result;
+		this.response = response;
 	}
 
 	/**
-	 * Get safe fee
+	 * Get hour fee price in satoshis
 	 *
 	 * @return {*}  {string}
 	 * @memberof BitcoinResult
 	 */
 	public getHourPrice(): string {
-		return this.result.hourFee.toString();
+		return this.response.hourFee.toString();
 	}
 
 	/**
-	 * Get propose gas fee
+	 * Get half hour fee price in satoshis
 	 *
 	 * @return {*}  {string}
 	 * @memberof BitcoinResult
 	 */
 	public getHalfHourPrice(): string {
-		return this.result.halfHourFee.toString();
+		return this.response.halfHourFee.toString();
 	}
 
 	/**
-	 * Get fast gas fee
+	 * Get fastest fee price in satoshis
 	 *
 	 * @return {*}  {string}
 	 * @memberof BitcoinResult
 	 */
 	public getFastestPrice(): string {
-		return this.result.fastestFee.toString();
+		return this.response.fastestFee.toString();
 	}
 }
 

@@ -7,48 +7,48 @@ interface ResponseProps {
 }
 
 class BscResult extends ResultContract {
-	private result: ResponseProps;
+	private response: ResponseProps;
 
 	/**
 	 * Constructor
-	 *
-	 * @param {*} result
+	 * 
+	 * @param {ResponseProps} response
 	 * @memberof BscResult
 	 */
-	public constructor(result: any) {
+	public constructor(response: ResponseProps) {
 		super();
 		
-		this.result = result;
+		this.response = response;
 	}
 
 	/**
-	 * Get safe fee
+	 * Get safe fee in Gwei
 	 *
 	 * @return {*}  {string}
 	 * @memberof BscResult
 	 */
 	public getSafePrice(): string {
-		return this.result.SafeGasPrice;
+		return this.response.SafeGasPrice;
 	}
 
 	/**
-	 * Get propose gas fee
+	 * Get propose gas fee in Gwei
 	 *
 	 * @return {*}  {string}
 	 * @memberof BscResult
 	 */
 	public getProposePrice(): string {
-		return this.result.ProposeGasPrice;
+		return this.response.ProposeGasPrice;
 	}
 
 	/**
-	 * Get fast gas fee
+	 * Get fast gas fee in Gwei
 	 *
 	 * @return {*}  {string}
 	 * @memberof BscResult
 	 */
 	public getFastPrice(): string {
-		return this.result.FastGasPrice;
+		return this.response.FastGasPrice;
 	}
 }
 
