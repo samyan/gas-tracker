@@ -9,11 +9,11 @@ import EthereumResult from './result/ethereum';
 import PolygonResult from './result/polygon';
 import BscResult from './result/bsc';
 import BitcoinResult from './result/bitcoin';
+import BlockchainType from './blockchain-type';
 
 class GasTracker implements Factory {
 	private axiosInstance: AxiosInstance;
-	private blockchains: string[];
-	private defaultBlockchain: string;
+	private defaultBlockchain: BlockchainType;
 	private apiKey: string;
 
 	/**
@@ -25,9 +25,7 @@ class GasTracker implements Factory {
 	public constructor(apiKey?: string) {
 		this.axiosInstance = axios.create();
 
-		this.blockchains = ['ethereum', 'polygon', 'bsc', 'bitcoin'];
-		this.defaultBlockchain = 'ethereum';
-
+		this.defaultBlockchain = BlockchainType.ETHEREUM;
 		this.apiKey = apiKey ?? '';
 	}
 
@@ -62,26 +60,21 @@ class GasTracker implements Factory {
 	/**
 	 * Get blockchain
 	 *
-	 * @param {string} [blockchain]
+	 * @param {BlockchainType} [blockchain]
 	 * @return {*}  {Blockchain}
 	 * @memberof GasTracker
 	 */
-	public getBlockchain(blockchain?: string): Blockchain {
-		const defaultBlockchain: string = blockchain ?? this.defaultBlockchain;
-
-		// Checking if the current blockchain is exists in blockchain list
-		if (!this.blockchains.includes(defaultBlockchain)) {
-			throw new Error(`Blockchain [${defaultBlockchain}] not supported`);
-		}
+	public getBlockchain(blockchain?: BlockchainType): Blockchain {
+		const defaultBlockchain: BlockchainType = blockchain ?? this.defaultBlockchain;
 
 		switch (defaultBlockchain) {
-			case 'ethereum':
+			case BlockchainType.ETHEREUM:
 				return new EthereumBlockchain(this.apiKey, this.axiosInstance);
-			case 'polygon':
+			case BlockchainType.POLYGON:
 				return new PolygonBlockchain(this.apiKey, this.axiosInstance);
-			case 'bsc':
+			case BlockchainType.BSC:
 				return new BscBlockchain(this.apiKey, this.axiosInstance);
-			case 'bitcoin':
+			case BlockchainType.BITCOIN:
 				return new BitcoinBlockchain(this.axiosInstance);
 			default:
 				throw new Error('Unsupported blockchain');
@@ -89,4 +82,4 @@ class GasTracker implements Factory {
 	}
 }
 
-export { GasTracker, BitcoinResult, EthereumResult, PolygonResult, BscResult };
+export { GasTracker, BitcoinResult, EthereumResult, PolygonResult, BscResult, BlockchainType };
