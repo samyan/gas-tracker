@@ -1,3 +1,5 @@
+
+import BlockchainType from '../blockchain-type';
 import Blockchain from './blockchain';
 
 abstract class Factory {
@@ -15,7 +17,7 @@ abstract class Factory {
 	 * @abstract
 	 * @memberof Factory
 	 */
-	public abstract getBlockchain: (blockchain?: string) => Blockchain;
+	public abstract getBlockchain: (blockchain?: BlockchainType) => Blockchain;
 }
 
 export default Factory;
