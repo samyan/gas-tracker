@@ -24,7 +24,7 @@ npm i @samyan/gas-tracker
 const gasTracker = new GasTracker();
 
 gasTracker
-    .getBlockchain('bitcoin')
+    .getBlockchain(BlockchainType.BITCOIN)
     .getPrices()
     .then((result: BitcoinResult) => {
         console.log(result.getHourPrice());
@@ -41,8 +41,8 @@ gasTracker
 try {
     const gasTracker = new GasTracker('YOUR_API_TOKEN');
 
-    const result: EthereumResult = (await gasTracker
-        .getBlockchain('ethereum')
+    const result = (await gasTracker
+        .getBlockchain(BlockchainType.ETHEREUM)
         .getPrices()
     ) as EthereumResult;
 
