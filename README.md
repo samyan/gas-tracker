@@ -27,7 +27,7 @@ gasTracker
     .getBlockchain(BlockchainType.BITCOIN)
     .getPrices()
     .then((result: BitcoinResult) => {
-        console.log(result.getHourPrice());
+        console.log(result.getRegularPrice());
     })
     .catch((error: any) => {
         console.log(error.message);
