@@ -1,6 +1,6 @@
 {
 	"name": "@samyan/gas-tracker",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "Library for get gas price from different sources",
 	"main": "build/index.js",
 	"homepage": "https://github.com/samyan/gas-tracker.git",
