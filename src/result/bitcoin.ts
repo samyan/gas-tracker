@@ -1,9 +1,8 @@
 import ResultContract from '../contract/result';
 
 interface ResponseProps {
-	fastestFee: number;
-	halfHourFee: number;
-	hourFee: number;
+	regular: number;
+	priority: number;
 }
 
 class BitcoinResult extends ResultContract {
@@ -22,33 +21,23 @@ class BitcoinResult extends ResultContract {
 	}
 
 	/**
-	 * Get hour fee price in satoshis
+	 * Get price for regular in satoshis
 	 *
 	 * @return {*}  {string}
 	 * @memberof BitcoinResult
 	 */
-	public getHourPrice(): string {
-		return this.response.hourFee.toString();
+	public getRegularPrice(): string {
+		return this.response.regular.toString();
 	}
 
 	/**
-	 * Get half hour fee price in satoshis
+	 * Get price for priority in satoshis
 	 *
 	 * @return {*}  {string}
 	 * @memberof BitcoinResult
 	 */
-	public getHalfHourPrice(): string {
-		return this.response.halfHourFee.toString();
-	}
-
-	/**
-	 * Get fastest fee price in satoshis
-	 *
-	 * @return {*}  {string}
-	 * @memberof BitcoinResult
-	 */
-	public getFastestPrice(): string {
-		return this.response.fastestFee.toString();
+	public getPriorityPrice(): string {
+		return this.response.priority.toString();
 	}
 }
 

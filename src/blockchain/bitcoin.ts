@@ -10,7 +10,7 @@ class BitcoinBlockchain extends AbstractBlockchain {
 	 * @memberof BitcoinBlockchain
 	 */
 	public constructor(client: AxiosInstance) {
-		super(client, 'https://bitcoinfees.earn.com/api/v1/fees/recommended');
+		super(client, 'https://api.blockchain.info/mempool/fees');
 	}
 
 	/**
