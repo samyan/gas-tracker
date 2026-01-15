@@ -4,18 +4,21 @@ import PolygonResult from '../result/polygon';
 
 class PolygonBlockchain extends AbstractBlockchain {
 	private apiKey: string;
+	private isMainNet: boolean;
 
 	/**
 	 * Constructor
 	 *
 	 * @param {string} apiKey
+	 * @param {boolean} isMainNet
 	 * @param {AxiosInstance} client
 	 * @memberof PolygonBlockchain
 	 */
-	public constructor(apiKey: string, client: AxiosInstance) {
+	public constructor(apiKey: string, isMainNet: boolean, client: AxiosInstance) {
 		super(client, 'https://api.polygonscan.com/api');
 
 		this.apiKey = apiKey;
+		this.isMainNet = isMainNet;
 	}
 	/**
 	 * Get gas prices in Gwei
@@ -29,6 +32,7 @@ class PolygonBlockchain extends AbstractBlockchain {
 			params: {
 				module: 'gastracker',
 				action: 'gasoracle',
+				chainid: this.isMainNet ? 137 : 80002,
 				apikey: this.apiKey,
 			},
 		});
