@@ -15,7 +15,7 @@ class PolygonBlockchain extends AbstractBlockchain {
 	 * @memberof PolygonBlockchain
 	 */
 	public constructor(apiKey: string, isMainNet: boolean, client: AxiosInstance) {
-		super(client, 'https://api.polygonscan.com/api');
+		super(client, 'https://api.etherscan.io/v2/api');
 
 		this.apiKey = apiKey;
 		this.isMainNet = isMainNet;
