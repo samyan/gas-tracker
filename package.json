@@ -6,7 +6,7 @@
 	"homepage": "https://github.com/samyan/gas-tracker.git",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/samyan/gas-tracker.git"
+		"url": "git+https://github.com/samyan/gas-tracker.git"
 	},
 	"scripts": {
 		"build": "babel src --out-dir build --extensions \".ts,.tsx\" --source-maps inline",
