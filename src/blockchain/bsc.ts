@@ -4,18 +4,21 @@ import BscResult from '../result/bsc';
 
 class BscBlockchain extends AbstractBlockchain {
 	private apiKey: string;
+	private isMainNet: boolean;
 
 	/**
 	 * Constructor
 	 *
 	 * @param {string} apiKey
+	 * @param {boolean} isMainNet
 	 * @param {AxiosInstance} client
 	 * @memberof BscBlockchain
 	 */
-	public constructor(apiKey: string, client: AxiosInstance) {
+	public constructor(apiKey: string, isMainNet: boolean, client: AxiosInstance) {
 		super(client, 'https://api.bscscan.com/api');
 
 		this.apiKey = apiKey;
+		this.isMainNet = isMainNet;
 	}
 
 	/**
@@ -29,6 +32,7 @@ class BscBlockchain extends AbstractBlockchain {
 			params: {
 				module: 'gastracker',
 				action: 'gasoracle',
+				chainid: this.isMainNet ? 56 : 97,
 				apikey: this.apiKey,
 			},
 		});
